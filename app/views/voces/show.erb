@@ -1,0 +1,90 @@
+<h2>Voces</h2>
+<% @concurso.voces.each do |voces| %>
+  <div class="container">
+  <div class="form-group row">
+    <span class= "col-sm-2 col-form-label">
+    <strong>email:</strong>
+    </span> 
+    <div class="col-sm-6">
+    <span class= "form-control">
+    <%= voces.email %></span>
+      </div>
+    </div>
+
+    <div class="container">
+    <div class="form-group row">
+      <span class= "col-sm-2 col-form-label">
+      <strong>nombres:</strong>
+      </span> 
+      <div class="col-sm-6">
+      <span class= "form-control">
+      <%= voces.nombres %></span>
+      </div>
+    </div>
+
+    <div class="container">
+    <div class="form-group row">
+      <span class= "col-sm-2 col-form-label">
+      <strong>apellidos:</strong>
+      </span> 
+      <div class="col-sm-6">
+      <span class= "form-control">
+      <%= voces.apellidos %></span>
+      </div>
+    </div>
+
+    <div class="container">
+    <div class="form-group row">
+      <span class= "col-sm-2 col-form-label">
+      <strong>fechacarga:</strong>
+      </span> 
+      <div class="col-sm-6">
+      <span class= "form-control">
+      <%= voces.fechacarga %></span>
+      </div>
+    </div>
+
+    <div class="container">
+    <div class="form-group row">
+      <span class= "col-sm-2 col-form-label">
+      <strong>observaciones:</strong>
+      </span> 
+      <div class="col-sm-6">
+      <span class= "form-control">
+      <%= voces.observaciones %></span>
+      </div>
+    </div>
+
+    <div class="container">
+    <div class="form-group row">
+      <span class= "col-sm-2 col-form-label">
+      <strong>estadovoz:</strong>
+      </span> 
+      <div class="col-sm-6">
+      <span class= "form-control">
+      <%= voces.estadovoz %></span>
+      </div>
+    </div>
+
+    <div class="container">
+    <div class="form-group row">
+      <span class= "col-sm-2 col-form-label">
+      <strong>archivooriginal:</strong>
+      </span> 
+      <div class="col-sm-6">
+      <span class= "form-control">
+      <%= voces.archivooriginal %></span>
+      </div>
+    </div>
+
+    <div class="container">
+    <div class="form-group row">
+      <span class= "col-sm-2 col-form-label">
+      <strong>archivoconvertido:</strong>
+      </span> 
+      <div class="col-sm-6">
+      <span class= "form-control">
+      <%= voces.archivoconvertido %></span>
+      </div>
+    </div>
+<% end %>
