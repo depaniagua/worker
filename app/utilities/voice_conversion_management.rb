@@ -14,7 +14,7 @@ class VoiceConversionManagement
         archivo = voce.archivooriginal.to_s 
 	archivo = archivo.split('?')[0]
 	archivo = archivo.split('/')[5]
-	ruta = '/home/ubuntu/proyecto/Grupo12/public/vocesconv/' + archivo
+	ruta = Rails.root.to_s + "/public" + '/vocesconv/' + archivo
 
   	origen  = voce.archivooriginal.to_s
         destino = voce.archivooriginal.to_s
@@ -23,7 +23,8 @@ class VoiceConversionManagement
 	carpetaID = destino.split('/')[4]
 	carga = 'vocesconv/' + carpetaID + '/' + archivo 
 	destino = destino.split('.com')[0] + '.com/' +  carga
-
+	puts 'origen: ' + origen
+	puts 'destino: ' + ruta
 	VoiceConversion.conversion_To_MP3(origen, ruta)
 
 	s3 = Aws::S3::Resource.new(
