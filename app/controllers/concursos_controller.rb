@@ -9,7 +9,7 @@ class ConcursosController < ApplicationController
 
   def show
     #@concurso = Concurso.find(params[:id])
-    unless current_user && 
+    unless current_user 
       @concurso = Concurso.order('created_at desc').paginate(page:params[:page],per_page:5).find(params[:id])
     else
       @concurso = current_user.concursos.order('created_at desc').paginate(page:params[:page],per_page:5).find(params[:id])

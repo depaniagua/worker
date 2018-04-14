@@ -3,7 +3,15 @@ class VoiceConversionManagement
 
   def voice_conversion
 
-    voces = Voce.all.where(estadovoz: 'En Proceso')
+    sqs = Aws::SQS::Client.new( access_key_id: ENV['SES_KEY'],
+				secret_access_key: ENV['SES_SECRET'],
+				region: 'us-west-2')
+
+    resp = sqs.receive_message(queue_url: "https://sqs.us-west-2.amazonaws.com/068461081282/convertMQ", max_number_of_messages: 1)
+
+    id = resp.to_s.to_i
+
+    voces = Voce.where(id: id)
 
     if voces.any? then
 
